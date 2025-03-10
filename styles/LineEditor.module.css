@@ -1,0 +1,86 @@
+.container {
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.editor {
+  display: flex;
+  overflow: hidden;
+}
+
+.lineNumbers {
+  color: #858585;
+  padding: 10px 5px;
+  text-align: right;
+  user-select: none;
+}
+
+.lineNumbers p {
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+.content {
+  flex: 1;
+  padding: 10px;
+  overflow-x: auto;
+  color: #d4d4d4;
+}
+
+.content pre {
+  margin: 0;
+  font-family: "Fira Code", monospace;
+  white-space: pre-wrap;
+  line-height: 1.5rem;
+}
+
+.string {
+  color: var(--accent-color);
+}
+
+.key {
+  color: #9cdcfe;
+}
+
+.value {
+  color: #b5cea8;
+}
+
+.symbol {
+  color: #d4d4d4;
+}
+
+.jsonContainer {
+  width: 100%;
+  max-width: 90%; /* Adjust maximum width as needed */
+  margin: 0 auto; /* Center the container */
+  padding: 16px;
+  background-color: #2d2d2d; /* Dark background for code */
+  color: #f8f8f2; /* Light text color */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto; /* Horizontal scroll for wide content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jsonContainer span {
+  display: inline-block;
+  white-space: pre-wrap; /* Preserve formatting and allow wrapping */
+  word-wrap: break-word; /* Break long words */
+}
+
+@media (max-width: 768px) {
+  .jsonContainer {
+    font-size: 12px; /* Smaller font for smaller screens */
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jsonContainer {
+    font-size: 10px; /* Further reduce font size */
+    padding: 8px;
+  }
+}

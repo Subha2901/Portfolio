@@ -1,0 +1,43 @@
+/* skills.module.css */
+.container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .skillsGrid {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: center; /* Centers items horizontally */
+    gap: 40px; /* Space between skill items */
+  }
+  
+  .skillItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .skillItem:hover {
+    transform: scale(1.1); /* Hover effect to enlarge */
+  }
+  
+  .icon {
+    font-size: 4rem; /* Increase icon size */
+    color: #4a90e2; /* Optional: Icon color */
+  }
+  
+  .skillName {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  

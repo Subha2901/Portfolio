@@ -1,0 +1,97 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 66px;
+    padding: 30px;
+}
+
+.gridItem {
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    --box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.7) 0px 18px 36px -18px inset;
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    padding: 15px;
+}
+
+.gridItem:hover {
+    transform: scale(1.2);
+    --box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    background: #333;
+    border-radius: 12px;
+    padding: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.gridItem:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -10px);
+}
+
+/* Tooltip Content Styling */
+.tooltip ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.tooltip ul li {
+    margin-bottom: 8px;
+}
+
+.tooltip strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gridContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gridItem {
+        width: 90%;
+    }
+
+    .tooltip {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gridItem img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tooltip {
+        width: 250px;
+    }
+
+    .gridItem h3 {
+        font-size: 1rem;
+    }
+}

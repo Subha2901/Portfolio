@@ -1,7 +1,10 @@
+import AboutMe from "../components/AboutMe";
+import LineEditor from "../components/LineEditor";
+
 const AboutPage = () => {
   return (
     <>
-      <h3>A Little Bit About Me</h3>
+    <AboutMe />
     </>
   );
 };
