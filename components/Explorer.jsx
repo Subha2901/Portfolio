@@ -26,13 +26,13 @@ const explorerItems = [
     icon: 'js_icon.svg',
   },
   {
-    name: 'articles.json',
-    path: '/articles',
-    icon: 'json_icon.svg',
+    name: 'skills.jsx',
+    path: '/skills',
+    icon: 'skills_icon.png',
   },
   {
-    name: 'github.md',
-    path: '/github',
+    name: 'experience.lims',
+    path: '/experience',
     icon: 'markdown_icon.svg',
   },
 ];
