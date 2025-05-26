@@ -1,13 +1,13 @@
 .titlebar {
   background: var(--titlebar-bg);
-  height: 30px;
-  padding: 0 0.5rem;
+  height: 37px;
+  padding: 0 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   border-bottom: 1px solid #191d20;
 }
 
@@ -15,7 +15,7 @@
   flex: 1;
   display: flex;
   margin-right: auto;
-  margin-left: 0.5rem;
+  margin-left: 0.8rem;
 }
 
 .title {
@@ -24,7 +24,7 @@
 }
 
 .items > * {
-  padding: 0 0.5rem;
+  padding: 0 0.8rem;
   cursor: pointer;
 }
 

@@ -1,83 +1,99 @@
-import styles from '../styles/ContactCode.module.css';
+import styles from "../styles/ContactCode.module.css";
 
 const contactItems = [
   {
-    social: 'website',
-    link: 'nitinranganath.me',
-    href: 'https://nitinranganath.me',
+    icon: "fa-brands fa-facebook-f",
+    social: "website",
+    link: "subhamahajan.me",
+    href: "https://subhamahajan.me",
   },
   {
-    social: 'email',
-    link: 'nitinranganath@gmail.com',
-    href: 'mailto:nitinranganath@gmail.com',
+    icon: "fa-solid fa-envelope",
+    social: "email",
+    link: "subhamahajan29@gmail.com",
+    href: "mailto:subhamahajan29@gmail.com",
   },
   {
-    social: 'github',
-    link: 'itsnitinr',
-    href: 'https://github.com/itsnitinr',
+    icon: "fa-brands fa-linkedin-in",
+    social: "linkedin",
+    link: "subhamahajan",
+    href: "https://www.linkedin.com/in/subhamahajan/",
   },
   {
-    social: 'linkedin',
-    link: 'nitinranganath',
-    href: 'https://www.linkedin.com/in/nitinranganath/',
+    icon: "fa-brands fa-github",
+    social: "github",
+    link: "Subha2901",
+    href: "https://github.com/Subha2901",
   },
   {
-    social: 'twitter',
-    link: 'iamnitinr',
-    href: 'https://www.twitter.com/iamnitinr',
+    icon: "fa-brands fa-x-twitter",
+    social: "X",
+    link: "SUbha________",
+    href: "https://x.com/SUbha________",
   },
   {
-    social: 'instagram',
-    link: 'iamnitinr',
-    href: 'https://www.instagram.com/iamnitinr',
+    icon: "fa-brands fa-whatsapp",
+    social: "Whatsapp",
+    link: "ChatWithMe",
+    href: "https://wa.me/919903806308",
   },
   {
-    social: 'polywork',
-    link: 'nitinranganath',
-    href: 'https://www.polywork.com/nitinranganath',
-  },
-  {
-    social: 'telegram',
-    link: 'iamnitinr',
-    href: 'https://t.me/iamnitinr',
-  },
-  {
-    social: 'codepen',
-    link: 'nitinranganath',
-    href: 'https://codepen.io/itsnitinr',
-  },
-  {
-    social: 'codesandbox',
-    link: 'itsnitinr',
-    href: 'https://codesandbox.io/u/itsnitinr',
+    icon: "fa-brands fa-telegram",
+    social: "telegram",
+    link: "SubhaMahajan",
+    href: "https://t.me/SubhaMahajan",
   },
 ];
 
 const ContactCode = () => {
   return (
-    <div className={styles.code}>
-      <p className={styles.line}>
-        <span className={styles.className}>.socials</span> &#123;
-      </p>
-      {contactItems.slice(0, 8).map((item, index) => (
-        <p className={styles.line} key={index}>
-          &nbsp;&nbsp;&nbsp;{item.social}:{' '}
-          <a href={item.href} target="_blank" rel="noopener">
-            {item.link}
-          </a>
-          ;
-        </p>
-      ))}
-      {contactItems.slice(8, contactItems.length).map((item, index) => (
-        <p className={styles.line} key={index}>
-          &nbsp;&nbsp;{item.social}:{' '}
-          <a href={item.href} target="_blank" rel="noopener">
-            {item.link}
-          </a>
-          ;
-        </p>
-      ))}
-      <p className={styles.line}>&#125;</p>
+    // <div className={styles.code}>
+    //   <p className={styles.line}>
+    //     <span className={styles.className}>.socials</span> &#123;
+    //   </p>
+    //   {contactItems.slice(0, 8).map((item, index) => (
+    //     <p className={styles.line} key={index}>
+    //       &nbsp;&nbsp;&nbsp;{item.social}:{' '}
+    //       <a href={item.href} target="_blank" rel="noopener">
+    //         {item.link}
+    //       </a>
+    //       ;
+    //     </p>
+    //   ))}
+    //   {contactItems.slice(8, contactItems.length).map((item, index) => (
+    //     <p className={styles.line} key={index}>
+    //       &nbsp;&nbsp;{item.social}:{' '}
+    //       <a href={item.href} target="_blank" rel="noopener">
+    //         {item.link}
+    //       </a>
+    //       ;
+    //     </p>
+    //   ))}
+    //   <p className={styles.line}>&#125;</p>
+    // </div>
+
+    <div className={styles.socialsDiv}>
+      <ul>
+        {contactItems.map((item, index) => (
+          <li className={styles.socialList} key={index}>
+            <a href={item.href} target="_blank" rel="noopener" style={{textDecoration: "none"}}>
+              <div className={styles.socialIcon}>
+                <i className={item.icon}></i>
+              </div>
+            </a>
+
+            <div className={styles.code}>
+              <p className={styles.line}>
+                <span>{item.social}</span>
+                <br />
+                <a href={item.href} target="_blank" rel="noopener">
+                  {item.link}
+                </a>
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

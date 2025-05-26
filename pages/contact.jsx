@@ -28,17 +28,18 @@ const ContactPage = () => {
 
   return (
     <div className={styles.container}>
-      <div>
+      <div style={{flex: '2'}}>
         <h3 className={styles.heading}>Reach Out Via Socials</h3>
         <ContactCode />
       </div>
-      <div>
+      <div style={{flex: '3'}}>
         <h3 className={styles.heading}>Or Fill Out This Form</h3>
         <form className={styles.form} onSubmit={submitForm}>
-          <div className={styles.flex}>
-            <div>
-              <label htmlFor="name">Name</label>
+          {/* <div className={styles.flex}></div> */}
+          <div className={styles.formField}>
+              <label htmlFor="name" className={styles.formLabel}>Name</label>
               <input
+                className={styles.formInput}
                 type="text"
                 name="name"
                 id="name"
@@ -47,9 +48,10 @@ const ContactPage = () => {
                 required
               />
             </div>
-            <div>
-              <label htmlFor="email">Email</label>
+            <div className={styles.formField}>
+              <label htmlFor="email" className={styles.formLabel}>Email</label>
               <input
+                className={styles.formInput}
                 type="email"
                 name="email"
                 id="email"
@@ -58,10 +60,10 @@ const ContactPage = () => {
                 required
               />
             </div>
-          </div>
-          <div>
-            <label htmlFor="name">Subject</label>
+          <div className={styles.formField}>
+            <label htmlFor="name" className={styles.formLabel}>Subject</label>
             <input
+              className={styles.formInput}
               type="text"
               name="subject"
               id="subject"
@@ -70,9 +72,10 @@ const ContactPage = () => {
               required
             />
           </div>
-          <div>
-            <label htmlFor="message">Message</label>
+          <div className={styles.formField}>
+            <label htmlFor="message" className={styles.formLabel} style={{top: '-8%'}}>Message</label>
             <textarea
+              className={styles.formInput}
               name="message"
               id="message"
               rows="5"

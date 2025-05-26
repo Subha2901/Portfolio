@@ -114,20 +114,7 @@ export default function ImageGrid() {
             {skills.map((skill, index) => (
                 <div key={index} className={styles.gridItem}>
                     <img src={skill.image} alt={skill.title} />
-                    <h3>{skill.title}</h3>
-                    <div className={styles.tooltip}>
-                        <ul>
-                            {skill.details.map((detail, i) => (
-                                <li key={i}>{detail}</li>
-                            ))}
-                        </ul>
-                        <strong>Projects:</strong>
-                        <ul>
-                            {skill.projects.map((project, i) => (
-                                <li key={i}>{project}</li>
-                            ))}
-                        </ul>
-                    </div>
+                    <div className={styles.skills_title_div}><span className={styles.skills_title}>{skill.title}</span></div>
                 </div>
             ))}
         </div>

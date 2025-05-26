@@ -137,7 +137,7 @@
   flex-direction: column;
   align-items: center;
   gap: 50px;
-  flex: 0 0 40%;
+  flex: 0 0 50%;
 }
 @media (max-width: 960px) {
   .aboutMeFlexContainer .aboutMeContent {
@@ -157,7 +157,6 @@
 }
 .aboutMeFlexContainer .aboutMeContent .text {
   color: #87A4B6;
-  font-weight: 600;
   font-size: 18px;
 }
 @media (max-width: 500px) {
@@ -168,12 +167,9 @@
 
 
 
-.mailButton {
+.mailDiv {
   display: flex;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  padding: 15px;
+  padding: 25px;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-out;
@@ -220,4 +216,29 @@
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
+}
+
+.aboutText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  color: #d1d1d1;
+  margin-bottom: 0.6rem;
+}
+
+.aboutHighlight {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.mailButton{
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border: solid 1px var(--accent-color);
+  border-radius: 25%;
+}
+
+.mailButton img{
+  height: 1.8rem;
+  width: 1.8rem;
 }

@@ -9,8 +9,15 @@ const ProjectCard = ({ project }) => {
         <h3>{project.name}</h3>
         <p>{project.description}</p>
         <div className={styles.tags}>
-          {project.tags.map((tag) => (
+          {project.skill_tags.map((tag) => (
             <span key={tag} className={tag}>
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className={styles.tags}>
+          {project.feature_tags.map((tag) => (
+            <span key={tag} className="featureTags">
               {tag}
             </span>
           ))}

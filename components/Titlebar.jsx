@@ -7,8 +7,8 @@ const Titlebar = () => {
       <Image
         src="/vscode_icon.svg"
         alt="VSCode Icon"
-        height={15}
-        width={15}
+        height={17}
+        width={17}
         className={styles.icon}
       />
       <div className={styles.items}>
@@ -20,7 +20,7 @@ const Titlebar = () => {
         <p>Terminal</p>
         <p>Help</p>
       </div>
-      <p className={styles.title}>Subha Mahajan - Visual Studio Code</p>
+      <p className={styles.title}>Subha Mahajan  -  Visual Studio Code</p>
       <div className={styles.windowButtons}>
         <span className={styles.minimize}></span>
         <span className={styles.maximize}></span>
