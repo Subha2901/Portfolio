@@ -19,9 +19,9 @@ const skills = [
     {
         title: 'HTML',
         details: [
-            '⭐ Expertise in semantic HTML and accessibility.',
-            '⭐ Building responsive layouts using modern techniques.',
-            '⭐ Optimized and SEO-friendly markup for better search visibility.',
+            'Expertise in semantic HTML and accessibility.',
+            'Building responsive layouts using modern techniques.',
+            'Optimized and SEO-friendly markup for better search visibility.',
         ],
         projects: ['Weather App UI', 'News Website Frontend'],
         image: './skills_icons/html.png'
@@ -29,29 +29,19 @@ const skills = [
     {
         title: 'CSS',
         details: [
-            '⭐ Proficient in CSS3: Flexbox, Grid, and advanced animations.',
-            '⭐ Implementing responsive design and cross-browser compatibility.',
-            '⭐ Theming and styling with CSS modules and TailwindCSS.',
+            'Proficient in CSS3: Flexbox, Grid, and advanced animations.',
+            'Implementing responsive design and cross-browser compatibility.',
+            'Theming and styling with CSS modules and TailwindCSS.',
         ],
         projects: ['Interactive Chat UI', 'Attendance System Dashboard'],
         image: './skills_icons/css.png'
     },
     {
-        title: 'IntelliJ',
-        details: [
-            '⭐ Experienced with IntelliJ IDEA for Java development.',
-            '⭐ Efficient debugging and code optimization.',
-            '⭐ Leveraging IntelliJ for Spring Boot and REST API projects.',
-        ],
-        projects: ['LIMS Backend System', 'Java REST API Services'],
-        image: './skills_icons/intellij.png'
-    },
-    {
         title: 'Java',
         details: [
-            '⭐ Strong knowledge of core Java, OOP principles, and collections.',
-            '⭐ Building REST APIs with Spring Boot and integrating databases.',
-            '⭐ Optimized LIMS system, improving performance by 20%.',
+            'Strong knowledge of core Java, OOP principles, and collections.',
+            'Building REST APIs with Spring Boot and integrating databases.',
+            'Optimized LIMS system, improving performance by 20%.',
         ],
         projects: ['LIMS Implementation for SGS and Lonza', 'Backend API Development'],
         image: './skills_icons/java.png'
@@ -59,9 +49,9 @@ const skills = [
     {
         title: 'JavaScript',
         details: [
-            '⭐ Deep understanding of ES6+, async/await, and closures.',
-            '⭐ Advanced DOM manipulation and event handling.',
-            '⭐ Implementing complex business logic for user interfaces.',
+            'Deep understanding of ES6+, async/await, and closures.',
+            'Advanced DOM manipulation and event handling.',
+            'Implementing complex business logic for user interfaces.',
         ],
         projects: ['Attendance System Features', 'News Search and Filter'],
         image: './skills_icons/js.png'
@@ -69,9 +59,9 @@ const skills = [
     {
         title: 'MySQL',
         details: [
-            '⭐ Designing relational databases and optimizing queries.',
-            '⭐ Expertise in stored procedures, triggers, and indexing.',
-            '⭐ Ensuring data integrity and efficient data retrieval.',
+            'Designing relational databases and optimizing queries.',
+            'Expertise in stored procedures, triggers, and indexing.',
+            'Ensuring data integrity and efficient data retrieval.',
         ],
         projects: ['Attendance System Database', 'LIMS Data Storage'],
         image: './skills_icons/mysql.png'
@@ -79,9 +69,9 @@ const skills = [
     {
         title: 'Node.js',
         details: [
-            '⭐ Building scalable REST APIs using Express.',
-            '⭐ Handling asynchronous workflows and middleware.',
-            '⭐ Integrating with MySQL and external APIs seamlessly.',
+            'Building scalable REST APIs using Express.',
+            'Handling asynchronous workflows and middleware.',
+            'Integrating with MySQL and external APIs seamlessly.',
         ],
         projects: ['News Backend API', 'Attendance System API'],
         image: './skills_icons/node.png'
@@ -89,19 +79,39 @@ const skills = [
     {
         title: 'React',
         details: [
-            '⭐ Component-based architecture and hooks.',
-            '⭐ Implementing real-time updates and responsive UIs.',
-            '⭐ Building advanced features like infinite scroll and filters.',
+            'Component-based architecture and hooks.',
+            'Implementing real-time updates and responsive UIs.',
+            'Building advanced features like infinite scroll and filters.',
         ],
         projects: ['News Website', 'Interactive Chat Application'],
         image: './skills_icons/react.png'
     },
     {
+        title: 'JasperSoft Studio',
+        details: [
+            'Advanced SQL scripting and performance tuning.',
+            'Managing large-scale databases and ensuring data security.',
+            'Supporting LIMS with optimized database queries.',
+        ],
+        projects: ['LIMS Database Optimization', 'Custom SQL Reporting'],
+        image: './skills_icons/jaspersoft.png'
+    },
+    {
+        title: 'GitHub',
+        details: [
+            'Advanced SQL scripting and performance tuning.',
+            'Managing large-scale databases and ensuring data security.',
+            'Supporting LIMS with optimized database queries.',
+        ],
+        projects: ['LIMS Database Optimization', 'Custom SQL Reporting'],
+        image: './skills_icons/github.png'
+    },
+    {
         title: 'SSMS',
         details: [
-            '⭐ Advanced SQL scripting and performance tuning.',
-            '⭐ Managing large-scale databases and ensuring data security.',
-            '⭐ Supporting LIMS with optimized database queries.',
+            'Advanced SQL scripting and performance tuning.',
+            'Managing large-scale databases and ensuring data security.',
+            'Supporting LIMS with optimized database queries.',
         ],
         projects: ['LIMS Database Optimization', 'Custom SQL Reporting'],
         image: './skills_icons/SSMS.png'

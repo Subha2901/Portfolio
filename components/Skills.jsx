@@ -22,15 +22,6 @@ const skills = [
         projects: ['Interactive Chat UI', 'Attendance System Dashboard']
     },
     {
-        title: 'IntelliJ',
-        details: [
-            '⭐ Experienced with IntelliJ IDEA for Java development.',
-            '⭐ Efficient debugging and code optimization.',
-            '⭐ Leveraging IntelliJ for Spring Boot and REST API projects.',
-        ],
-        projects: ['LIMS Backend System', 'Java REST API Services']
-    },
-    {
         title: 'Java',
         details: [
             '⭐ Strong knowledge of core Java, OOP principles, and collections.',

@@ -22,7 +22,7 @@
 
 
 /* Tooltip Styling */
-.tooltip {
+/* .tooltip {
     position: absolute;
     bottom: 120%;
     left: 50%;
@@ -54,10 +54,10 @@
 .skills_title{
     font-size: 15px;
     font-weight: 600;
-}
+} */
 
 /* Tooltip Content Styling */
-.tooltip ul {
+/* .tooltip ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -75,7 +75,7 @@
     margin-top: 10px;
     font-weight: bold;
     color: #f39c12;
-}
+} */
 
 /* Responsive Design */
 @media (max-width: 768px) {
