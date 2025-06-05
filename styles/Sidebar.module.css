@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 4.2vw;
-  min-width: 40px;
+  width: 3.5vw;
+  min-width: 4rem;
   height: calc(100vh - 30px - 25px);
 }
 
@@ -22,14 +22,14 @@
 }
 
 .icon {
-  height: 48px;
-  width: 48px;
+  height: 3rem;
+  width: 3rem;
   padding: 0.65rem 0;
   display: block;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 2000px) {
+/* @media screen and (min-width: 2000px) {
   .sidebar {
     width: 2.5vw;
   }
@@ -61,4 +61,4 @@
     width: 40px;
     padding: 0.6rem;
   }
-}
+} */

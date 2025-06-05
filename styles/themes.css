@@ -9,6 +9,7 @@
   --sidebar-hover-bg: #1f2428;
   --explorer-bg: #1f2428;
   --explorer-hover-bg: #24292e;
+  --explorer-select-bg: #414250;
   --explorer-border: #161a1d;
   --tabs-bg: #1f2428;
   --tab-bg: #1f2428;
@@ -35,9 +36,11 @@
   --sidebar-hover-bg: #3c3d51;
   --explorer-bg: #21222c;
   --explorer-hover-bg: #313241;
+  --explorer-select-bg: #414250;
   --explorer-border: #161a1d;
   --tabs-bg: #191a21;
   --tab-bg: #21222c;
+  --tab-hover-bg: #282a36;
   --tab-active-bg: #282a36;
   --tab-border: #191a21;
   --bottombar-bg: #191a21;

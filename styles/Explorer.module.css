@@ -2,7 +2,8 @@
 
 .explorer {
   background: var(--explorer-bg);
-  width: 14vw;
+  width: 12.5vw;
+  min-width: 140px;
   color: rgb(225, 228, 232);
   font-family: 'Source Sans Pro', sans-serif;
   border-right: 1px solid var(--explorer-border);
@@ -44,7 +45,7 @@
 }
 
 .file {
-  padding: 0.35rem 1rem;
+  padding: 0.45rem 1rem;
   display: flex;
   align-items: center;
   font-size: 1.05rem;
@@ -78,4 +79,8 @@
   .explorer {
     display: none;
   }
+}
+
+.active{
+  background: var(--explorer-select-bg);
 }

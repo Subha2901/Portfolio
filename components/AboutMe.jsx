@@ -7,12 +7,13 @@ export default function AboutMe() {
       <section className={styles.aboutMe} id="aboutMe">
         <div className={styles.container}>
           <div className={styles.aboutMeContainer}>
-            <div className={styles.aboutMeTitle}>
-              About <br /> Subha Mahajan
-            </div>
+            
 
             <div className={styles.aboutMeFlexContainer}>
               <div className={styles.aboutMeContent}>
+                <div className={styles.aboutMeTitle}>
+              About <br /> Subha Mahajan
+            </div>
                 <div className={styles.text}>
                   <p className={styles.aboutText}>
                     Hi, I'm{" "}

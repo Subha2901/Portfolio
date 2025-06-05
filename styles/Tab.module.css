@@ -1,12 +1,12 @@
 .tab {
-  padding: 0.65rem 1.5rem;
+  padding: 0.55rem 1.6rem;
   background: var(--tab-bg);
   color: #ececec;
   display: flex;
   align-items: center;
   border: 1px solid var(--tab-border);
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 

@@ -37,7 +37,7 @@
 }
 
 .aboutMe {
-  padding-top: 50px;
+  /* padding-top: 2rem; */
   padding-bottom: 50px;
 }
 .aboutMe .aboutMeContainer {
@@ -49,20 +49,21 @@
   }
 }
 .aboutMe .aboutMeContainer .aboutMeTitle {
-  font-size: 55px;
+  font-size: 3.5rem;
   color: #87A4B6;
   font-weight: 700;
 }
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .aboutMe .aboutMeContainer .aboutMeTitle {
     font-size: 30px;
   }
-}
+} */
 
 .aboutMeFlexContainer {
-  margin-top: 25px;
   display: flex;
   justify-content: space-between;
+  gap: 10rem;
+  padding: 0 4rem;
 }
 @media (max-width: 960px) {
   .aboutMeFlexContainer {
@@ -80,8 +81,10 @@
 }
 .aboutMeFlexContainer .aboutMeImage {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: auto;
+  margin: 7rem 0;
+  max-width: 500px;
 }
 @media (max-width: 500px) {
   .aboutMeFlexContainer .aboutMeImage {
@@ -93,14 +96,15 @@
   position: absolute;
   bottom: 0;
   background-color: #013747;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 72%;
 }
 .aboutMeFlexContainer .aboutMeImage .blackImage {
   position: absolute;
   left: 10px;
   bottom: 10px;
-  height: 100%;
+  width: 70%;
+  height: 80%;
 }
 .aboutMeFlexContainer .aboutMeImage .blackImage img {
   height: 100%;
@@ -110,8 +114,8 @@
   height: 77%;
   overflow: hidden;
   position: absolute;
-  left: 25%;
-  top: 5%;
+  left: 15%;
+  top: 10%;
   box-shadow: rgb(0, 0, 0) 0px 7px 50px 0px;
   transition: all 0.5s ease-out;
   border-radius: 1%;
@@ -124,10 +128,12 @@
 } */
 .aboutMeFlexContainer .aboutMeImage .mainImage img {
   transform-origin: center center;
-  transform: scale(2);
+  transform: scale(1.5);
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 0.5s ease-out;
+  width: 100%;
+  height: 100%;
 }
 .aboutMeFlexContainer .aboutMeImage .mainImage img:hover {
   transform: scale(1);
@@ -135,8 +141,8 @@
 .aboutMeFlexContainer .aboutMeContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 50px;
+  align-items: right;
+  gap: 2rem;
   flex: 0 0 50%;
 }
 @media (max-width: 960px) {
@@ -169,7 +175,7 @@
 
 .mailDiv {
   display: flex;
-  padding: 25px;
+  padding: 4rem;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-out;
