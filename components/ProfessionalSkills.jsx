@@ -133,7 +133,6 @@ const ProfessionalSkills = () => {
                     justify-content: center;
                     gap: 2.5rem; /* Increased gap between major sections */
                     width: 100%;
-                    margin-top: 2.5rem;
                     padding: 0 1.5rem; /* Padding for inner content */
                 }
 
@@ -186,7 +185,7 @@ const ProfessionalSkills = () => {
 
                 .project-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Slightly larger min-width for projects */
+                    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr)); /* Slightly larger min-width for projects */
                     gap: 1.2rem; /* Increased gap */
                     padding-top: 1.2rem;
                 }
@@ -205,7 +204,7 @@ const ProfessionalSkills = () => {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    height: 140px; /* Increased height for project cards */
+                    // height: 140px; /* Increased height for project cards */
                     // border: 1px solid rgba(255, 255, 255, 0.15);
                 }
 
@@ -216,8 +215,8 @@ const ProfessionalSkills = () => {
                 }
 
                 .project-card img {
-                    width: 70px; /* Larger icon size */
-                    height: 70px;
+                    width: 3rem; /* Larger icon size */
+                    height: 3rem;
                     border-radius: 50%;
                     object-fit: cover;
                     margin-bottom: 0.75rem;

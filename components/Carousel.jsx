@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // Data for all skills
 const skills = [
@@ -204,13 +204,13 @@ const SkillCard = ({ skill, isActive, isLeftPartial, isRightPartial }) => {
             <li key={index}>
               {/* Apply simple styling based on content for readability */}
               {item.trim().startsWith('//') && <span className="comment-text">{item}</span>}
-              {item.trim().startsWith('-') && (
+              {!item.trim().startsWith('//') && (
                 <>
                   <span className="list-marker">-</span><span className="list-text">{item.substring(1)}</span>
                 </>
               )}
+              {/* Empty lines are important for code-like formatting, so render them */}
               {item.trim() === '' && <span className="empty-line">&nbsp;</span>}
-              {!item.trim().startsWith('//') && !item.trim().startsWith('-') && item.trim() !== '' && item}
             </li>
           ))}
           {/* Projects Section */}
@@ -254,375 +254,79 @@ const SkillCard = ({ skill, isActive, isLeftPartial, isRightPartial }) => {
           )}
         </ul>
       </div>
-      <button
+      {/* <button
         className="view-details-button"
         onClick={elaborateSkillDetails}
         disabled={isLoadingLlmContent}
       >
         {isLoadingLlmContent ? 'Loading...' : '✨ Elaborate Details'}
-      </button>
+      </button> */}
     </div>
   );
 };
 
 // Main App component: Renders a carousel of SkillCards
-const Caorusel = () => {
+const App = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0); // Start with the first card
+  const intervalRef = useRef(null); // Ref to store the interval ID
+
+  // Auto-slide duration in milliseconds
+  const autoSlideInterval = 5000;
+
+  // Function to start the auto-slide
+  const startAutoSlide = () => {
+    // Clear any existing interval to prevent multiple intervals running
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrentCardIndex((prevIndex) =>
+        prevIndex === skills.length - 1 ? 0 : prevIndex + 1
+      );
+    }, autoSlideInterval);
+  };
+
+  // Function to pause the auto-slide
+  const pauseAutoSlide = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  // Effect to manage auto-slide on component mount and unmount
+  useEffect(() => {
+    startAutoSlide(); // Start auto-slide when component mounts
+
+    // Cleanup function to clear interval when component unmounts
+    return () => pauseAutoSlide();
+  }, []); // Empty dependency array ensures this runs only once on mount and unmount
 
   const goToPrevious = () => {
+    pauseAutoSlide(); // Pause on manual interaction
     setCurrentCardIndex((prevIndex) =>
       prevIndex === 0 ? skills.length - 1 : prevIndex - 1
     );
+    startAutoSlide(); // Resume after a brief delay, or immediately
   };
 
   const goToNext = () => {
+    pauseAutoSlide(); // Pause on manual interaction
     setCurrentCardIndex((prevIndex) =>
       prevIndex === skills.length - 1 ? 0 : prevIndex + 1
     );
+    startAutoSlide(); // Resume after a brief delay, or immediately
   };
 
   const goToCard = (index) => {
+    pauseAutoSlide(); // Pause on manual interaction
     setCurrentCardIndex(index);
+    startAutoSlide(); // Resume after a brief delay, or immediately
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container" onMouseEnter={pauseAutoSlide} onMouseLeave={startAutoSlide}>
       {/* Custom CSS for neomorphic shadows and VS Code editor styling */}
-      <style>
-        {`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
-        :root {
-            --bg-color: #2a2c30;
-            --editor-bg-color: #1e1e1e;
-            --card-color: #2a2c30;
-            --text-color: #e0e0e0;
-            --header-color: #569cd6;
-            --list-item-color: #ce9178;
-            --comment-color: #6a9955;
-            --subtle-text-color: #a0a0a0;
-            --llm-text-color: #c586c0; /* A distinct color for LLM generated text */
-
-            --shadow-light: rgba(255, 255, 255, 0.05);
-            --shadow-dark: rgba(0, 0, 0, 0.4);
-            --shadow-dark-inner: rgba(0, 0, 0, 0.6);
-            --shadow-light-inner: rgba(255, 255, 255, 0.08);
-
-            --border-radius: 12px;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .app-container {
-            min-height: 100vh;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Space Mono', monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            overflow: hidden; /* Hide overflowing cards */
-        }
-
-        /* Carousel Container */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            max-width: 900px; /* Adjusted max-width for carousel */
-            height: 450px; /* Fixed height for carousel */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 24px;
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .carousel-container {
-                height: 500px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .carousel-container {
-                height: 550px;
-            }
-        }
-
-        /* Card Base Styles */
-        .neomorphic-card {
-            position: absolute;
-            background-color: var(--editor-bg-color);
-            border-radius: var(--border-radius);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            min-height: 380px;
-            width: 95%; /* Responsive width for single card */
-            max-width: 600px; /* Max width for desktop */
-            transition: all 0.5s ease-in-out; /* Smooth transitions */
-            transform-origin: center;
-            padding-bottom: 20px; /* Add padding for button */
-        }
-
-        /* Active Card Styles */
-        .active-card {
-            z-index: 20;
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
-            left: 50%;
-            box-shadow: 12px 12px 25px var(--shadow-dark), -12px -12px 25px var(--shadow-light);
-            filter: blur(0px); /* No blur on active card */
-        }
-
-        /* Partial Left Card Styles */
-        .left-partial-card {
-            z-index: 10;
-            opacity: 0.6;
-            transform: translateX(-100%) scale(0.85); /* Move further left and scale down */
-            left: 0%; /* Start from the left edge */
-            box-shadow: inset 7px 7px 15px var(--shadow-dark-inner), inset -7px -7px 15px var(--shadow-light-inner);
-            filter: blur(1px); /* Subtle blur */
-        }
-
-        /* Partial Right Card Styles */
-        .right-partial-card {
-            z-index: 10;
-            opacity: 0.6;
-            transform: translateX(0%) scale(0.85); /* Move further right and scale down */
-            left: 100%; /* Start from the right edge */
-            box-shadow: 7px 7px 15px var(--shadow-dark), -7px -7px 15px var(--shadow-light);
-            filter: blur(1px); /* Subtle blur */
-        }
-
-        /* Hidden Cards */
-        .hidden-card {
-            z-index: 0;
-            opacity: 0;
-            transform: translateX(-50%) scale(0.7); /* Scale down even more */
-            pointer-events: none;
-            /* No display: none; to allow smooth transitions */
-            filter: blur(2px); /* More blur for hidden cards */
-        }
-
-        @media (min-width: 768px) {
-            .neomorphic-card {
-                width: 80%;
-            }
-            .active-card {
-                width: 60%;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .neomorphic-card {
-                width: 60%;
-            }
-            .active-card {
-                width: 40%;
-            }
-        }
-
-        /* Editor Top Bar (Traffic Lights) */
-        .editor-top-bar {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            background-color: #333;
-            border-top-left-radius: var(--border-radius);
-            border-top-right-radius: var(--border-radius);
-            border-bottom: 1px solid rgba(0,0,0,0.2);
-        }
-
-        .traffic-light {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-
-        .traffic-light.red { background-color: #ff605c; }
-        .traffic-light.yellow { background-color: #ffbd44; }
-        .traffic-light.green { background-color: #00ca4e; }
-
-        .skill-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-            border-radius: 4px;
-            object-fit: cover;
-        }
-
-        .editor-filename {
-            flex-grow: 1;
-            text-align: center;
-            color: var(--subtle-text-color);
-            font-size: 0.9em;
-        }
-
-        /* Card Content Area */
-        .card-content-area {
-            padding: 20px 0;
-            background-color: var(--editor-bg-color);
-            overflow-x: auto;
-            counter-reset: line-number;
-            flex-grow: 1;
-        }
-
-        /* Card Title - Styled as a main heading within the editor */
-        .card-title {
-            font-size: 1.2em;
-            font-weight: 700;
-            margin-bottom: 16px;
-            text-align: left;
-            padding-left: 60px;
-            color: var(--text-color);
-        }
-
-        /* Card List Content - Styled as readable lines with line numbers */
-        .card-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            font-size: 0.95em;
-        }
-
-        .card-list li {
-            position: relative;
-            padding: 2px 0 2px 60px;
-            line-height: 1.5;
-            white-space: pre;
-            color: var(--text-color);
-        }
-
-        .card-list li::before {
-            content: counter(line-number);
-            counter-increment: line-number;
-            position: absolute;
-            left: 15px;
-            top: 2px;
-            color: var(--subtle-text-color);
-            font-size: 0.85em;
-            text-align: right;
-            width: 30px;
-        }
-
-        /* Basic "Syntax" Highlighting for readability */
-        .card-list li .comment-text { color: var(--comment-color); }
-        .card-list li .list-marker { color: var(--list-item-color); margin-right: 5px;}
-        .card-list li .list-text { display: inline-block; }
-        .card-list li .empty-line { height: 1.5em; }
-        .card-list li .llm-text { color: var(--llm-text-color); } /* Style for LLM generated text */
-
-
-        /* View Details Button - Styled to fit editor theme */
-        .view-details-button {
-            margin: 20px auto;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            background-color: #3c3c3c;
-            color: var(--text-color);
-            border: none;
-            cursor: pointer;
-            outline: none;
-            transition: all 0.2s ease;
-
-            /* Neomorphic button state - slightly inset */
-            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.08);
-        }
-
-        .view-details-button:hover {
-            box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6), inset -2px -2px 4px rgba(255, 255, 255, 0.08);
-            transform: translateY(0.5px);
-        }
-
-        .view-details-button:active {
-            box-shadow: 2px 2px 4px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
-            transform: translateY(1px);
-            color: var(--subtle-text-color);
-        }
-
-        .view-details-button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6), inset -2px -2px 4px rgba(255, 255, 255, 0.08);
-        }
-
-        /* Carousel Navigation */
-        .carousel-navigation {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            margin-top: 32px;
-        }
-
-        .nav-button {
-            background-color: var(--card-color);
-            border: none;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            color: var(--text-color);
-            cursor: pointer;
-            outline: none;
-            user-select: none;
-            transition: all 0.2s ease;
-
-            /* Concave effect for arrows */
-            box-shadow: inset 6px 6px 12px var(--shadow-dark-inner), inset -6px -6px 12px var(--shadow-light-inner);
-        }
-
-        .nav-button:hover {
-            box-shadow: inset 3px 3px 6px var(--shadow-dark-inner), inset -3px -3px 6px var(--shadow-light-inner);
-            color: var(--subtle-text-color);
-        }
-
-        .nav-button:active {
-            box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
-            transform: translateY(1px);
-        }
-
-        .nav-dots {
-            display: flex;
-            gap: 16px;
-        }
-
-        .dot-base {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: var(--card-color);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .dot-inactive {
-            box-shadow: 2px 2px 4px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
-        }
-
-        .dot-inactive:hover {
-            box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
-        }
-
-        .dot-active {
-            box-shadow: inset 3px 3px 6px var(--shadow-dark-inner), inset -3px -3px 6px var(--shadow-light-inner);
-        }
-        `}
-      </style>
 
       <div className="carousel-container">
         {skills.map((skill, index) => (
@@ -670,4 +374,4 @@ const Caorusel = () => {
   );
 };
 
-export default Caorusel;
+export default App;

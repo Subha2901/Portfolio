@@ -227,7 +227,7 @@ const skills = [
 const SkillsPage = ({ title }) => {
   return (
     <>
-      <h1>{title}</h1>
+      {/* <h1>{title}</h1> */}
       <Skills />
       <Carousel />
       {/* <EmblaCarousel slides={skills} options={OPTIONS} /> */}

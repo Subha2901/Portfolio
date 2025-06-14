@@ -1,8 +1,8 @@
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 50px;
-    padding: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .gridItem {
@@ -12,12 +12,19 @@
     --box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.7) 0px 18px 36px -18px inset;
     box-shadow: var(--box-shadow);
     transition: box-shadow 0.5s ease, transform 0.5s ease;
-    padding: 15px 25px 15px 25px;
+    padding: 1rem 2rem;
+    text-align: center;
+    width: 9rem;
 }
 
 .gridItem:hover {
     transform: scale(1.2);
     --box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.gridItem img{
+    height: 4.7rem;
+    width: 4.7rem;
 }
 
 

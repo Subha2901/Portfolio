@@ -124,7 +124,7 @@ export default function ImageGrid() {
             {skills.map((skill, index) => (
                 <div key={index} className={styles.gridItem}>
                     <img src={skill.image} alt={skill.title} />
-                    <div className={styles.skills_title_div}><span className={styles.skills_title}>{skill.title}</span></div>
+                    <div className={styles.skills_title_div} style={{textAlign: 'center', margin: 'auto'}}><span className={styles.skills_title}>{skill.title}</span></div>
                 </div>
             ))}
         </div>
