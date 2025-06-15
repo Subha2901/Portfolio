@@ -2,22 +2,16 @@ import styles from "../styles/ContactCode.module.css";
 
 const contactItems = [
   {
-    icon: "fa-brands fa-facebook-f",
-    social: "website",
-    link: "subhamahajan.me",
-    href: "https://subhamahajan.me",
-  },
-  {
     icon: "fa-solid fa-envelope",
     social: "email",
     link: "subhamahajan29@gmail.com",
-    href: "mailto:subhamahajan29@gmail.com",
+    href: "mailto:subhamahajan29@gmail.com?subject=Feedback of PortFolio Website",
   },
   {
     icon: "fa-brands fa-linkedin-in",
     social: "linkedin",
     link: "subhamahajan",
-    href: "https://www.linkedin.com/in/subhamahajan/",
+    href: "https://www.linkedin.com/in/subhamahajan",
   },
   {
     icon: "fa-brands fa-github",
@@ -30,6 +24,12 @@ const contactItems = [
     social: "X",
     link: "SUbha________",
     href: "https://x.com/SUbha________",
+  },
+  {
+    icon: "fa-brands fa-facebook-f",
+    social: "facebook",
+    link: "subhamahajan.me",
+    href: "https://www.facebook.com/mahajansubha",
   },
   {
     icon: "fa-brands fa-whatsapp",
@@ -74,25 +74,41 @@ const ContactCode = () => {
 
     <div className={styles.socialsDiv}>
       <ul>
-        {contactItems.map((item, index) => (
-          <li className={styles.socialList} key={index}>
-            <a href={item.href} target="_blank" rel="noopener" style={{textDecoration: "none"}}>
-              <div className={styles.socialIcon}>
-                <i className={item.icon}></i>
-              </div>
-            </a>
+        {contactItems.map((item, index) => {
+          // Check if the link is an email link
+          const isEmail = item.social === "email";
 
-            <div className={styles.code}>
-              <p className={styles.line}>
-                <span>{item.social}</span>
-                <br />
-                <a href={item.href} target="_blank" rel="noopener">
-                  {item.link}
-                </a>
-              </p>
-            </div>
-          </li>
-        ))}
+          return (
+            <li className={styles.socialList} key={index}>
+              <a
+                href={item.href}
+                // Only add target="_blank" if it's not an email link
+                target={isEmail ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <div className={styles.socialIcon}>
+                  <i className={item.icon}></i>
+                </div>
+              </a>
+
+              <div className={styles.code}>
+                <p className={styles.line}>
+                  <span>{item.social}</span>
+                  <br />
+                  <a
+                    href={item.href}
+                    // Apply the same conditional logic here
+                    target={isEmail ? "_self" : "_blank"}
+                    rel="noopener noreferrer"
+                  >
+                    {item.link}
+                  </a>
+                </p>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -423,7 +423,8 @@ body {
   flex-grow: 1;
   text-align: center;
   color: var(--subtle-text-color);
-  font-size: 0.9em;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 /* Card Content Area */
@@ -549,12 +550,12 @@ body {
   background-color: var(--card-color);
   border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 1.6rem;
   color: var(--text-color);
   cursor: pointer;
   outline: none;
@@ -581,8 +582,8 @@ body {
 }
 
 .dot-base {
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background-color: var(--card-color);
   cursor: pointer;

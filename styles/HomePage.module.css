@@ -25,6 +25,13 @@
   align-items: center;
 }
 
+.firstTag {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  width: 80%;
+  display: block;
+}
+
 .name {
   color: #eee;
   font-size: 3.5rem;
@@ -77,65 +84,65 @@
 }
 
 .button {
-    all: unset;
-    cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    position: relative;
-    border-radius: 999vw;
-    background-color: rgba(0, 0, 0, 0.75);
-    box-shadow: -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
-        0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
-    border: solid var(--accent-color);
-    margin-right: 2rem;
+  all: unset;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+  border-radius: 999vw;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
+    0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
+  border: solid var(--accent-color);
+  margin-right: 2rem;
 }
 
 .button::after {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    width: calc(100% + 0.3em);
-    height: calc(100% + 0.3em);
-    top: -0.15em;
-    left: -0.15em;
-    border-radius: inherit;
-    background: linear-gradient(-135deg,
-            rgba(5, 5, 5, 0.5),
-            transparent 20%,
-            transparent 100%);
-    filter: blur(0.0125em);
-    opacity: 0.25;
-    mix-blend-mode: multiply;
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: calc(100% + 0.3em);
+  height: calc(100% + 0.3em);
+  top: -0.15em;
+  left: -0.15em;
+  border-radius: inherit;
+  background: linear-gradient(-135deg,
+      rgba(5, 5, 5, 0.5),
+      transparent 20%,
+      transparent 100%);
+  filter: blur(0.0125em);
+  opacity: 0.25;
+  mix-blend-mode: multiply;
 }
 
 .button .buttonOuter {
-    position: relative;
-    z-index: 1;
-    border-radius: inherit;
-    transition: box-shadow 300ms ease;
-    will-change: box-shadow;
-    box-shadow: 0 0.05em 0.05em -0.01em rgba(5, 5, 5, 1),
-        0 0.01em 0.01em -0.01em rgba(5, 5, 5, 0.5),
-        0.15em 0.3em 0.1em -0.01em rgba(5, 5, 5, 0.25);
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  transition: box-shadow 300ms ease;
+  will-change: box-shadow;
+  box-shadow: 0 0.05em 0.05em -0.01em rgba(5, 5, 5, 1),
+    0 0.01em 0.01em -0.01em rgba(5, 5, 5, 0.5),
+    0.15em 0.3em 0.1em -0.01em rgba(5, 5, 5, 0.25);
 }
 
 .button:hover .buttonOuter {
-    box-shadow: 0 0 0 0 rgba(5, 5, 5, 1), 0 0 0 0 rgba(5, 5, 5, 0.5),
-        0 0 0 0 rgba(5, 5, 5, 0.25);
+  box-shadow: 0 0 0 0 rgba(5, 5, 5, 1), 0 0 0 0 rgba(5, 5, 5, 0.5),
+    0 0 0 0 rgba(5, 5, 5, 0.25);
 }
 
 .buttonInner {
-    --inset: 0.035em;
-    position: relative;
-    z-index: 1;
-    border-radius: inherit;
-    padding: 0.5rem 1.2rem;
-    background-color: var(--accent-color);
-    transition: box-shadow 300ms ease, clip-path 250ms ease,
-        background-image 250ms ease, transform 250ms ease;
-    will-change: box-shadow, clip-path, background-image, transform;
-    overflow: clip;
-    clip-path: inset(0 0 0 0 round 999vw);
-    /* box-shadow:
+  --inset: 0.035em;
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--accent-color);
+  transition: box-shadow 300ms ease, clip-path 250ms ease,
+    background-image 250ms ease, transform 250ms ease;
+  will-change: box-shadow, clip-path, background-image, transform;
+  overflow: clip;
+  clip-path: inset(0 0 0 0 round 999vw);
+  /* box-shadow:
         0 0 0 0 inset rgba(5, 5, 5, 0.1),
         -0.05em -0.05em 0.05em 0 inset rgba(5, 5, 5, 0.25),
         0 0 0 0 inset rgba(5, 5, 5, 0.1),
@@ -146,38 +153,37 @@
 }
 
 .button:hover .buttonInner {
-    clip-path: inset(clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) round 999vw);
-    box-shadow:
-        0.1em 0.15em 0.05em 0 inset rgba(5, 5, 5, 0.75),                -0.025em -0.03em 0.05em 0.025em inset rgba(5, 5, 5, 0.5),                0.25em 0.25em 0.2em 0 inset rgba(5, 5, 5, 0.5),                0 0 0.05em 0.5em inset rgba(5, 5, 5, 0.05),                0 0 0 0 inset rgba(5, 5, 5, 1),                0.12em 0.12em 0.12em inset rgba(5, 5, 5, 0.25),                -0.075em -0.12em 0.2em 0.1em inset rgba(5, 5, 5, 0.25)
+  clip-path: inset(clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) round 999vw);
+  box-shadow:
+    0.1em 0.15em 0.05em 0 inset rgba(5, 5, 5, 0.75), -0.025em -0.03em 0.05em 0.025em inset rgba(5, 5, 5, 0.5), 0.25em 0.25em 0.2em 0 inset rgba(5, 5, 5, 0.5), 0 0 0.05em 0.5em inset rgba(5, 5, 5, 0.05), 0 0 0 0 inset rgba(5, 5, 5, 1), 0.12em 0.12em 0.12em inset rgba(5, 5, 5, 0.25), -0.075em -0.12em 0.2em 0.1em inset rgba(5, 5, 5, 0.25)
 }
 
 .button .buttonInner span {
-    position: relative;
-    z-index: 4;
-    font-family: "Inter", sans-serif;
-    letter-spacing: -0.05em;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.74);
-    background-image: var(--accent-color);
-    -webkit-background-clip: text;
-    background-clip: text;
-    transition: transform 250ms ease;
-    display: block;
-    will-change: transform;
-    text-shadow: rgba(0, 0, 0, 0.1) 0 0 0.1em;
-    -webkit-user-select: none; 
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  position: relative;
+  z-index: 4;
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.74);
+  background-image: var(--accent-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: transform 250ms ease;
+  display: block;
+  will-change: transform;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 0 0.1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .button:hover .buttonInner span {
-    transform: scale(0.975);
+  transform: scale(0.975);
 }
 
 .button:active .buttonInner {
-    transform: scale(0.975);
+  transform: scale(0.975);
 }
 
 .illustration {
@@ -190,22 +196,28 @@
   .background {
     font-size: 8.5rem;
   }
+
   .content {
     padding: 0 3rem;
   }
+
   .name {
     font-size: 6rem;
   }
+
   .bio {
     font-size: 3rem;
     margin-bottom: 5rem;
   }
+
   .button {
     font-size: 2rem;
   }
+
   .outlined {
     font-size: 2rem;
   }
+
   .illustration {
     height: 900px;
     width: 700px;
@@ -217,21 +229,26 @@
   .background {
     display: none;
   }
+
   .container {
     display: block;
   }
+
   .foreground {
     margin: 4rem 0;
     display: block;
     text-align: center;
   }
+
   .name {
     font-size: 4rem;
   }
+
   .bio {
     font-size: 1.75rem;
     margin: 0.75rem auto 3rem;
   }
+
   .illustration {
     position: absolute;
     bottom: -50px;
@@ -246,13 +263,16 @@
   .foreground {
     margin: 2rem 0;
   }
+
   .name {
     font-size: 3rem;
     margin-bottom: 0.5rem;
   }
+
   .bio {
     font-size: 1.5rem;
   }
+
   .illustration {
     height: 550px;
     width: 420px;
@@ -264,6 +284,7 @@
   .container {
     display: flex;
   }
+
   .illustration {
     display: none;
   }
@@ -274,19 +295,24 @@
   .foreground {
     margin: 0;
   }
+
   .name {
     font-size: 2rem;
   }
+
   .bio {
     font-size: 1.25rem;
     margin-bottom: 2rem;
   }
+
   .button {
     font-size: 1rem;
   }
+
   .outlined {
     font-size: 1rem;
   }
+
   .illustration {
     position: absolute;
     bottom: 0;

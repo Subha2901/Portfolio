@@ -84,7 +84,13 @@ const ContactPage = () => {
               required
             ></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button className={styles.button}>
+                <div className={styles.buttonOuter}>
+                  <div className={styles.buttonInner}>
+                    <span>Submit</span>
+                  </div>
+                </div>
+              </button>
         </form>
       </div>
     </div>

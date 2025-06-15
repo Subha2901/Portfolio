@@ -1,10 +1,8 @@
-
-
 [
   {
     "id": 1,
     "name": "Attendance Management System",
-    "image": "https://imgur.com/q3QKYHh.png", 
+    "image": "/AttendenceWebsiteBanner.png", 
     "description": "A full-stack attendance system with calendar-based marking, login system, admin approval, filtering, and custom scrolling.",
     "skill_tags": ["react", "node", "mysql"],
     "feature_tags": ["calendar", "authentication"],
@@ -13,8 +11,8 @@
   },
   {
     "id": 2,
-    "name": "Chat Application",
-    "image": "https://imgur.com/a/i7aKlNo.png", 
+    "name": "Medical Chat Application",
+    "image": "/ChatAppWebsiteBanner.png", 
     "description": "A web-based chat app using GetStream API with a dark theme and offline notification support.",
     "skill_tags": ["react", "getstream", "css"],
     "feature_tags": ["responsive", "dark-mode", "offline notification"],
@@ -24,7 +22,7 @@
   {
     "id": 3,
     "name": "Management Information System",
-    "image": "https://imgur.com/a/DyBkV0u.png", 
+    "image": "/MISWebsiteBanner.png", 
     "description": "MIS built using HTML, CSS, JS, Bootstrap, and MSSQL for Bokaro Steel Plant, improving data entry efficiency by 70%.",
     "skill_tags": ["aspnet", "angular", "mssql"],
     "feature_tags": ["responsive", "customizable ui"],
@@ -39,6 +37,16 @@
     "skill_tags": ["next"],
     "feature_tags": ["vsCode influenced portfolio"],
     "source_code": "https://github.com/your-github-username/your-portfolio-repo",
+    "demo": "https://your-portfolio-live-link.com/"
+  },
+  {
+    "id": 6,
+    "name": "News Application",
+    "image": "/NewsWebsiteBanner.png",
+    "description": "ModifyNewsApplication is a dynamic platform that allows users to edit, update, and manage news articles in real time with features like filtering, sorting, and content customization.",
+    "skill_tags": ["react", "css", "api", "node"],
+    "feature_tags": ["reponsive"],
+    "source_code": "https://github.com/Subha2901/ModifyNewsApplication",
     "demo": "https://your-portfolio-live-link.com/"
   }
   

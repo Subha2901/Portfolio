@@ -7,8 +7,8 @@ export default function HomePage() {
     <>
       <div className={styles.container}>
         <div className={styles.background}>
-          <h1>From Lab Bench to Web Bench — </h1>
-          <h1>I Build It All</h1>
+          <span className={styles.firstTag}><h1>From Lab Bench to Web Bench — </h1></span>
+          <span className={styles.secondTag}><h1>I Build It All</h1></span>
         </div>
         <div className={styles.foreground}>
           <div className={styles.content}>

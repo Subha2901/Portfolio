@@ -35,7 +35,7 @@ const explorerItems = [
   {
     name: 'experience.lims',
     path: '/experience',
-    icon: 'markdown_icon.svg',
+    icon: 'lims_icon.png',
   },
 ];
 

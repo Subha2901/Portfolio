@@ -58,7 +58,7 @@ const skills = [
         image: 'mysql.png'
     },
     {
-        title: 'Node.js',
+        title: 'Node',
         details: [
             '  // Server-Side JavaScript',
             '  - Scalable REST APIs (Express.js).',
@@ -191,7 +191,7 @@ const SkillCard = ({ skill, isActive, isLeftPartial, isRightPartial }) => {
         <div className="traffic-light red"></div>
         <div className="traffic-light yellow"></div>
         <div className="traffic-light green"></div>
-        <img src={imageUrl} alt={`${skill.title} icon`} className="skill-icon" />
+        {/* <img src={imageUrl} alt={`${skill.title} icon`} className="skill-icon" /> */}
         <div className="editor-filename">{skill.title.toLowerCase()}.md</div>
       </div>
 
@@ -271,7 +271,7 @@ const App = () => {
   const intervalRef = useRef(null); // Ref to store the interval ID
 
   // Auto-slide duration in milliseconds
-  const autoSlideInterval = 5000;
+  const autoSlideInterval = 7000;
 
   // Function to start the auto-slide
   const startAutoSlide = () => {

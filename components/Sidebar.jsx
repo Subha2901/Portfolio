@@ -15,16 +15,8 @@ const sidebarTopItems = [
     path: '/',
   },
   {
-    Icon: GithubIcon,
-    path: '/github',
-  },
-  {
     Icon: CodeIcon,
     path: '/projects',
-  },
-  {
-    Icon: PencilIcon,
-    path: '/articles',
   },
   {
     Icon: MailIcon,
