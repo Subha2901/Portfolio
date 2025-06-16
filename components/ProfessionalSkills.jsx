@@ -93,20 +93,6 @@ const ProfessionalSkills = () => {
             {/* Tailwind CSS and custom styles */}
             <style>
                 {`
-                body {
-                    font-family: 'Inter', sans-serif;
-                    background-color: #1a1a2e; /* Deep dark blue/purple */
-                    background-image: radial-gradient(circle at top left, #3e2f5b 0%, transparent 50%),
-                                      radial-gradient(circle at bottom right, #2a2a4a 0%, transparent 50%);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    min-height: 100vh;
-                    margin: 0;
-                    overflow-x: hidden; /* Prevent horizontal scroll from rotated elements */
-                    color: #e0e0e0; /* Light gray text for contrast */
-                }
-
                 .portfolio-wrapper {
                     position: relative;
                     display: flex;

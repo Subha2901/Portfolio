@@ -1,14 +1,22 @@
 import Link from "next/link";
 import Illustration from "../components/Illustration";
 import styles from "../styles/HomePage.module.css";
+import LeftPanel from "../components/CodeSnippet";
 
 export default function HomePage() {
   return (
     <>
       <div className={styles.container}>
         <div className={styles.background}>
-          <span className={styles.firstTag}><h1>From Lab Bench to Web Bench — </h1></span>
-          <span className={styles.secondTag}><h1>I Build It All</h1></span>
+          <div>
+            <span className={styles.firstTag}>
+              <h1>From Lab Bench to Web Bench — </h1>
+            </span>
+            <span className={styles.secondTag}>
+              <h1>I Build It All</h1>
+            </span>
+          </div>
+          <Illustration className={styles.illustration} />
         </div>
         <div className={styles.foreground}>
           <div className={styles.content}>
@@ -37,7 +45,9 @@ export default function HomePage() {
               </button>
             </Link>
           </div>
-          <Illustration className={styles.illustration} />
+          <div>
+            <LeftPanel />
+          </div>
         </div>
       </div>
     </>

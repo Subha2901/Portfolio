@@ -1,4 +1,4 @@
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../components/ProjectCard copy';
 import { getProjects } from './api/projects';
 import styles from '../styles/ProjectsPage.module.css';
 

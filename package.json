@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^0.2.2",
+    "color-thief-react": "^2.1.0",
     "embla-carousel": "^8.5.2",
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-class-names": "^8.5.2",

@@ -2,13 +2,41 @@
   background: var(--article-bg);
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
+  position: relative;
+  height: 400px;
+  z-index: 1000;
+  overflow: hidden;
 }
 
 .card:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.cardImage {
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.cardImage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+  box-shadow: var(--data) 0px -50px 60px 15px inset;
+}
+
+.cardImage:hover::before {
+  transform: scale(1.02);
+}
+
 
 .content {
   padding: 1rem;
