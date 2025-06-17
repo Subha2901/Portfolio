@@ -271,7 +271,7 @@ const App = () => {
   const intervalRef = useRef(null); // Ref to store the interval ID
 
   // Auto-slide duration in milliseconds
-  const autoSlideInterval = 7000;
+  const autoSlideInterval = 100000;
 
   // Function to start the auto-slide
   const startAutoSlide = () => {

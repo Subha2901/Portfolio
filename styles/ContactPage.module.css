@@ -74,13 +74,13 @@
   margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .container {
     display: block;
   }
   .container > div:first-child {
     border-right: none;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
   }
 }
 

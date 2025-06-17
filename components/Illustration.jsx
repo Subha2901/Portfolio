@@ -8,7 +8,7 @@ function Illustration(props) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <circle cx={167} cy={60} r={60} fill="#D7F484" />
+      <circle className="illustration_circle" cx={167} cy={60} r={60} fill="#D7F484" />
       <circle cx={37.5} cy={215.5} r={37.5} fill="currentColor" />
       <path
         fillRule="evenodd"

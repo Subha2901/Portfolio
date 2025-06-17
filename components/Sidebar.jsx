@@ -8,6 +8,8 @@ import MailIcon from './icons/MailIcon';
 import AccountIcon from './icons/AccountIcon';
 import SettingsIcon from './icons/SettingsIcon';
 import styles from '../styles/Sidebar.module.css';
+import { useEffect } from 'react';
+import AnimatedToggle from './AnimatedToggle';
 
 const sidebarTopItems = [
   {
@@ -35,12 +37,14 @@ const sidebarBottomItems = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({visible, setVisible}) => {
   const router = useRouter();
 
+  
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarTop}>
+        <AnimatedToggle onToggle={setVisible}/>
         {sidebarTopItems.map(({ Icon, path }) => (
           <Link href={path} key={path}>
             <div

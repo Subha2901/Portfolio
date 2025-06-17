@@ -1,0 +1,36 @@
+.toggleButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.iconWrapper {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.open {
+  transform: rotate(0deg);
+}
+
+.closed {
+  transform: rotate(90deg);
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+.iconWrapper {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.closed {
+  transform: rotate(90deg) scale(0.95);
+  opacity: 0.85;
+}

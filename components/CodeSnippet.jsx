@@ -17,6 +17,7 @@ const CodeSnippet = () => {
       scrollBehavior: 'smooth',
       scrollbarColor: 'rgb(50, 54, 62) transparent',
       padding: '20px', // Apply padding directly to the container
+      textAlign: 'start',
     },
     codeLine: {
       display: 'flex',

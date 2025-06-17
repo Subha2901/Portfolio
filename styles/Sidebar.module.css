@@ -29,6 +29,12 @@
   margin: 0 auto;
 }
 
+@media screen and (min-width: 600px) {
+  .toggleButton {
+      display: none;
+    }
+}
+
 /* @media screen and (min-width: 2000px) {
   .sidebar {
     width: 2.5vw;

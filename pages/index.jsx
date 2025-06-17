@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <div className={styles.container}>
         <div className={styles.background}>
-          <div>
+          <div className={styles.background_text}>
             <span className={styles.firstTag}>
               <h1>From Lab Bench to Web Bench — </h1>
             </span>
@@ -45,7 +45,7 @@ export default function HomePage() {
               </button>
             </Link>
           </div>
-          <div>
+          <div className={styles.LeftPanel}>
             <LeftPanel />
           </div>
         </div>

@@ -3,9 +3,10 @@
   /* flex-wrap: wrap; */
   background: var(--tabs-bg);
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .tabs {
     width: 78vw;
   }
@@ -15,4 +16,4 @@
   .tabs {
     width: 89.5vw;
   }
-}
+} */
