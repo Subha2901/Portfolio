@@ -1,11 +1,11 @@
-import Experience from "../components/ProfessionalSkills";
-import CodeSnippet from "../components/Test1";
+// import Experience from "../components/ProfessionalSkills";
+import LimsDashboard from "../components/LIMSDashboard";
 
 const ExperiencePage = ({ title }) => {
   return (
     <>
       {/* <Experience /> */}
-      <CodeSnippet />
+      <LimsDashboard />
     </>
   );
 };

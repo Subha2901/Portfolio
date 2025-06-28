@@ -1,9 +1,10 @@
-import Experience from "../components/ProfessionalSkills";
+// import Experience from "../components/ProfessionalSkills";
+import LIMSExperienceContent from "../components/Test1"
 
 const ExperiencePage = ({ title }) => {
   return (
     <>
-      <Experience />
+      <LIMSExperienceContent />
     </>
   );
 };

@@ -1,5 +1,4 @@
 .card {
-  background: var(--article-bg);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -41,6 +40,7 @@
 .content {
   padding: 1rem;
   border-radius: 0 0 20px 20px;
+  height: 50%;
 }
 
 .content p {

@@ -1,49 +1,40 @@
-# vscode-portfolio
-[![Open is Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/itsnitinr/vscode-portfolio)
+# 💼 Subha Mahajan — Developer Portfolio
 
-A Visual Studio Code themed developer portfolio website built with Next.js and deployed on Vercel.
+[![Live Site](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://portfolio-flax-sigma-52.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-13+-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
 
-![vscode-portfolio banner](https://imgur.com/JXJ9mpO.gif)
+A modern, interactive portfolio website inspired by the **Visual Studio Code UI**. Built with **Next.js**, this portfolio showcases my skills, projects, and experience in a developer-themed aesthetic — giving it the feel of browsing code inside an editor.
 
-## Features Roadmap
+---
 
-- [ ] Themes and customizations
-  - [x] GitHub Dark (default)
-  - [ ] One Dark Pro
-  - [x] Dracula
-  - [x] Ayu
-  - [x] Nord
-- [ ] Interactive custom terminal
+## 🧠 Features
 
-For other features and themes suggestions, please open an issue.
+- 🖥️ **VSCode-style UI** — Sidebars, tabs, code file feel.
+- ⚛️ **Built with Next.js + React**.
+- 🎨 Styled with **CSS Modules** and dynamic dark mode theming.
+- 🧭 Fully responsive for mobile, tablet, and desktop.
+- 🔄 Smooth **toggle animations** for panels and explorer.
+- 💼 Sections: `home.jsx`, `about.html`, `contact.css`, `projects.js`, `skills.jsx`, `experience.lims`
+- 💡 Gemini (LLM) integration for skill insights (experimental).
 
-## Environment Variables
+---
 
-For fetching your articles from dev.to, create an `.env.local` file inside the project directory. Check the `.env.local.example` file for more information.
+## 🚀 Live Demo
 
-## Running Development Server
+🔗 [https://portfolio-flax-sigma-52.vercel.app/](https://portfolio-flax-sigma-52.vercel.app/)
+
+---
+
+## 📁 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-```
+.
+├── components/         # Reusable UI components (Sidebar, Explorer, Layout, etc.)
+├── pages/              # Next.js pages (home, about, projects, contact, etc.)
+├── public/             # Static files like icons and images
+├── styles/             # CSS module files
+├── contexts/           # Shared state context (e.g., toggle visibility)
+├── utils/              # Helper functions (if needed)
+└── README.md
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-All VSCode related components can be found in the `components` folder. To change the content of the portfolio, check out the `pages` folder. To add or remove pages, modify `components/Sidebar.jsx` and `components/Tabsbar.jsx`.
-
-## Next.js Resources
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/)
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

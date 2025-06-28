@@ -118,11 +118,11 @@ const skills = [
     },
 ];
 
-export default function ImageGrid() {
+export default function ImageGrid({setCarouselIndex}) {
     return (
         <div className={styles.gridContainer}>
             {skills.map((skill, index) => (
-                <div key={index} className={styles.gridItem}>
+                <div key={index} className={styles.gridItem} onClick={() => setCarouselIndex(index)}>
                     <img src={skill.image} alt={skill.title} />
                     <div className={styles.skills_title_div} style={{textAlign: 'center', margin: 'auto'}}><span className={styles.skills_title}>{skill.title}</span></div>
                 </div>

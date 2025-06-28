@@ -72,13 +72,6 @@ export default function AboutMe() {
                     honing my skills.
                   </p>
                 </div>
-
-                {/* <div className={styles.logo}>
-                  <img
-                    src="https://raw.githubusercontent.com/Smit-Prajapati/prajapatismit/20391be8bf1ed24ef0e5da066bf68a5f6ee78fa1/images/logo.svg"
-                    alt="smit"
-                  />
-                </div> */}
               </div>
 
               <div className={styles.aboutMeImage}>

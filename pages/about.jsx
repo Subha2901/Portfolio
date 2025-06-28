@@ -1,5 +1,4 @@
 import AboutMe from "../components/AboutMe";
-import LineEditor from "../components/LineEditor";
 
 const AboutPage = () => {
   return (

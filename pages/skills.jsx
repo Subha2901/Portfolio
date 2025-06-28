@@ -1,7 +1,6 @@
 import Skills from "../components/Skills1";
-import Skills1 from "../components/Skills";
-import EmblaCarousel from "../components/EmblaCarousel";
 import Carousel from '../components/Carousel'
+import { useState } from "react";
 
 const OPTIONS = { dragFree: true, loop: true }
 const SLIDE_COUNT = 5
@@ -225,11 +224,12 @@ const skills = [
 
 
 const SkillsPage = ({ title }) => {
+    const [carouselIndex, setCarouselIndex] = useState(0);
   return (
     <>
       {/* <h1>{title}</h1> */}
-      <Skills />
-      <Carousel />
+      <Skills carouselIndex={carouselIndex} setCarouselIndex={setCarouselIndex}/>
+      <Carousel carouselIndex={carouselIndex}/>
       {/* <EmblaCarousel slides={skills} options={OPTIONS} /> */}
     </>
   );

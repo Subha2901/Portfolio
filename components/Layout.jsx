@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       <Titlebar />
       <div className={styles.main}>
         <Sidebar setVisible={setVisible} visible={visible}/>
-        {visible && <ToggleExplorer />}
+        {visible && <ToggleExplorer setVisible={setVisible}/>}
         <Explorer/>
         <div style={{ overflowX: 'scroll', width: '100%', scrollbarWidth: 'none' }}>
           <Tabsbar />

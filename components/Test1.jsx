@@ -5,13 +5,13 @@ const LIMSExperienceContent = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   // Define common colors as constants (copied from the original LIMSExperiencePage)
-  const mainTextColor = '#D4D4D4';
-  const mutedTextColor = '#ABB2BF';
+  const mainTextColor = '#E06C75';
+  const mutedTextColor = '#679453';
   const accentBlue = '#61AFEF';
   const accentPurple = '#C678DD';
   const accentGreen = '#98C379';
-  const accentRed = '#E06C75';
-  const commentColor = '#5C6370';
+  const accentRed = '#D4D4D4';
+  const commentColor = '#679453';
   const darkBg = '#1E1E1E';
   const darkerBg = '#282C34';
   const tabBarBg = '#f9826c'; // This was the header color, now used for section titles
@@ -25,14 +25,10 @@ const LIMSExperienceContent = () => {
 
   const styles = {
     section: {
-      backgroundColor: darkerBg,
       padding: '25px',
-      borderRadius: '8px',
       marginBottom: '25px',
-      boxShadow: '0 4px 15px rgba(0,0,0,0.4)',
-      border: `1px solid ${lightBorderColor}`,
       color: mainTextColor, // Ensure default text color for the section
-      fontFamily: '"JetBrains Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
+      // fontFamily: '"JetBrains Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
       maxWidth: '1200px',
       margin: '0 auto',
     },
@@ -238,8 +234,8 @@ const LIMSExperienceContent = () => {
 
   const workExperience = [
     {
-      title: 'Associate Solution Engineer',
-      company: 'LabVantage Solutions',
+      title: 'Solution Engineer',
+      company: 'LabVantage Solutions Pvt. Ltd.',
       dates: 'Aug 2023 - Present',
       description: [
         'Configured and customized LabVantage LIMS for clients including SGS, Lonza, Wellgem, Almac, and Roche, optimizing workflows for Manufacturing, Quality, and R&D.',
@@ -269,7 +265,7 @@ const LIMSExperienceContent = () => {
     lines.push(
       <div key={`${exp.title}-line-${currentLine}`} style={styles.codeLine}>
         <span style={styles.lineNumber}>{currentLine++}</span>
-        <span style={{ ...styles.codeContent, color: styles.sectionTitle.color, fontWeight: 'bold' }}>
+        <span style={{ ...styles.codeContent, color: styles.sectionTitle.color, fontWeight: 'bold', fontSize: '1rem' }}>
           {exp.title}
         </span>
       </div>
@@ -286,7 +282,7 @@ const LIMSExperienceContent = () => {
       <div key={`${exp.title}-company-line-${currentLine}`} style={styles.codeLine}>
         <span style={styles.lineNumber}>{currentLine++}</span>
         <span style={styles.codeContent}>
-          <span style={styles.codeComment}>// Company: {exp.company}</span>
+          <span style={{ ...styles.codeComment, fontWeight: '900'}}>// Company: {exp.company}</span>
         </span>
       </div>
     );

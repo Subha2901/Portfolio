@@ -5,10 +5,10 @@ const skills = [
     {
         title: 'HTML',
         details: [
-            '  // Core HTML & Accessibility',
-            '  - Semantic markup, ARIA roles.',
-            '  - Responsive layouts (Flexbox, Grid).',
-            '  - SEO optimization, performance.',
+            ' // Core HTML & Accessibility',
+            ' Semantic markup, ARIA roles.',
+            ' Responsive layouts (Flexbox, Grid).',
+            ' SEO optimization, performance.',
         ],
         projects: ['Weather App UI', 'News Website Frontend'],
         image: 'html.png' // Placeholder for image name
@@ -16,10 +16,10 @@ const skills = [
     {
         title: 'CSS',
         details: [
-            '  // Styling & Responsiveness',
-            '  - CSS3: Flexbox, Grid, animations.',
-            '  - Cross-browser compatibility.',
-            '  - Theming: CSS Modules, TailwindCSS.',
+            ' // Styling & Responsiveness',
+            ' CSS3: Flexbox, Grid, animations.',
+            ' Cross-browser compatibility.',
+            ' Theming: CSS Modules, TailwindCSS.',
         ],
         projects: ['Interactive Chat UI', 'Attendance System Dashboard'],
         image: 'css.png'
@@ -27,10 +27,10 @@ const skills = [
     {
         title: 'Java',
         details: [
-            '  // Backend & Enterprise Java',
-            '  - Core Java, OOP, Collections API.',
-            '  - REST APIs with Spring Boot.',
-            '  - Database integration, LIMS optimization.',
+            ' // Backend & Enterprise Java',
+            ' Core Java, OOP, Collections API.',
+            ' REST APIs with Spring Boot.',
+            ' Database integration, LIMS optimization.',
         ],
         projects: ['LIMS Implementation (SGS, Lonza)', 'Backend API Development'],
         image: 'java.png'
@@ -38,10 +38,10 @@ const skills = [
     {
         title: 'JavaScript',
         details: [
-            '  // Frontend Logic & Interactivity',
-            '  - ES6+, async/await, closures.',
-            '  - Advanced DOM manipulation.',
-            '  - Implementing complex business logic for user interfaces.',
+            ' // Frontend Logic & Interactivity',
+            ' ES6+, async/await, closures.',
+            ' Advanced DOM manipulation.',
+            ' Implementing complex business logic for user interfaces.',
         ],
         projects: ['Attendance System Features', 'News Search and Filter'],
         image: 'js.png'
@@ -49,10 +49,10 @@ const skills = [
     {
         title: 'MySQL',
         details: [
-            '  // Database Design & Querying',
-            '  - Relational DB design, query optimization.',
-            '  - Stored procedures, triggers, and indexing.',
-            '  - Data integrity, efficient retrieval.',
+            ' // Database Design & Querying',
+            ' Relational DB design, query optimization.',
+            ' Stored procedures, triggers, and indexing.',
+            ' Data integrity, efficient retrieval.',
         ],
         projects: ['Attendance System Database', 'LIMS Data Storage'],
         image: 'mysql.png'
@@ -60,10 +60,10 @@ const skills = [
     {
         title: 'Node',
         details: [
-            '  // Server-Side JavaScript',
-            '  - Scalable REST APIs (Express.js).',
-            '  - Asynchronous workflows, middleware.',
-            '  - Integrating with MySQL and external APIs seamlessly.',
+            ' // Server-Side JavaScript',
+            ' Scalable REST APIs (Express.js).',
+            ' Asynchronous workflows, middleware.',
+            ' Integrating with MySQL and external APIs seamlessly.',
         ],
         projects: ['News Backend API', 'Attendance System API'],
         image: 'node.png'
@@ -71,10 +71,10 @@ const skills = [
     {
         title: 'React',
         details: [
-            '  // Modern Frontend Development',
-            '  - Component-based architecture, Hooks.',
-            '  - Implementing real-time updates and responsive UIs.',
-            '  - Building advanced features like infinite scroll and filters.',
+            ' // Modern Frontend Development',
+            ' Component-based architecture, Hooks.',
+            ' Implementing real-time updates and responsive UIs.',
+            ' Building advanced features like infinite scroll and filters.',
         ],
         projects: ['News Website', 'Interactive Chat Application'],
         image: 'react.png'
@@ -82,10 +82,10 @@ const skills = [
     {
         title: 'JasperSoft Studio',
         details: [
-            '  // Reporting & Business Intelligence',
-            '  - Report design, data visualization.',
-            '  - Custom SQL queries for reports.',
-            '  - LIMS reporting optimization.',
+            ' // Reporting & Business Intelligence',
+            ' Report design, data visualization.',
+            ' Custom SQL queries for reports.',
+            ' LIMS reporting optimization.',
         ],
         projects: ['LIMS Database Optimization', 'Custom SQL Reporting'],
         image: 'jaspersoft.png'
@@ -93,10 +93,10 @@ const skills = [
     {
         title: 'GitHub',
         details: [
-            '  // Version Control & Collaboration',
-            '  - Git workflows: branching, merging.',
-            '  - Repository management, pull requests.',
-            '  - Collaborative development practices.',
+            ' // Version Control & Collaboration',
+            ' Git workflows: branching, merging.',
+            ' Repository management, pull requests.',
+            ' Collaborative development practices.',
         ],
         projects: ['LIMS Database Optimization', 'Custom SQL Reporting'], // Placeholder projects
         image: 'github.png'
@@ -104,10 +104,10 @@ const skills = [
     {
         title: 'SSMS',
         details: [
-            '  // SQL Server Management',
-            '  - Database administration, T-SQL scripting.',
-            '  - Performance monitoring, query analysis.',
-            '  - Data manipulation and security.',
+            ' // SQL Server Management',
+            ' Database administration, T-SQL scripting.',
+            ' Performance monitoring, query analysis.',
+            ' Data manipulation and security.',
         ],
         projects: ['LIMS Database Optimization', 'Custom SQL Reporting'], // Placeholder projects
         image: 'SSMS.png'
@@ -266,12 +266,16 @@ const SkillCard = ({ skill, isActive, isLeftPartial, isRightPartial }) => {
 };
 
 // Main App component: Renders a carousel of SkillCards
-const App = () => {
+const App = ({carouselIndex}) => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0); // Start with the first card
   const intervalRef = useRef(null); // Ref to store the interval ID
 
+  useEffect(() => {
+    setCurrentCardIndex(carouselIndex);
+  },[carouselIndex])
+
   // Auto-slide duration in milliseconds
-  const autoSlideInterval = 100000;
+  const autoSlideInterval = 10000;
 
   // Function to start the auto-slide
   const startAutoSlide = () => {

@@ -1,50 +1,55 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import FilesIcon from './icons/FilesIcon';
-import GithubIcon from './icons/GithubIcon';
-import CodeIcon from './icons/CodeIcon';
-import PencilIcon from './icons/PencilIcon';
-import MailIcon from './icons/MailIcon';
-import AccountIcon from './icons/AccountIcon';
-import SettingsIcon from './icons/SettingsIcon';
-import styles from '../styles/Sidebar.module.css';
-import { useEffect } from 'react';
-import AnimatedToggle from './AnimatedToggle';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import FilesIcon from "./icons/FilesIcon";
+import GithubIcon from "./icons/GithubIcon";
+import CodeIcon from "./icons/CodeIcon";
+import PencilIcon from "./icons/PencilIcon";
+import MailIcon from "./icons/MailIcon";
+import AccountIcon from "./icons/AccountIcon";
+import SettingsIcon from "./icons/SettingsIcon";
+import styles from "../styles/Sidebar.module.css";
+import { useEffect } from "react";
+import AnimatedToggle from "./AnimatedToggle";
 
 const sidebarTopItems = [
   {
     Icon: FilesIcon,
-    path: '/',
+    path: "/",
   },
   {
     Icon: CodeIcon,
-    path: '/projects',
+    path: "/projects",
   },
   {
     Icon: MailIcon,
-    path: '/contact',
+    path: "/contact",
   },
 ];
 
 const sidebarBottomItems = [
   {
     Icon: AccountIcon,
-    path: '/about',
+    path: "/about",
   },
   {
     Icon: SettingsIcon,
-    path: '/settings',
+    path: "/settings",
   },
 ];
 
-const Sidebar = ({visible, setVisible}) => {
+const Sidebar = ({ visible, setVisible }) => {
   const router = useRouter();
 
-  
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarTop}>
-        <AnimatedToggle onToggle={setVisible}/>
+        <div className={styles.toggleIcon}>
+          <div className={styles.iconContainer}>
+          <AnimatedToggle onToggle={setVisible} isOpen={visible}/>
+        </div>
+        </div>
+        
+
         {sidebarTopItems.map(({ Icon, path }) => (
           <Link href={path} key={path}>
             <div
@@ -55,8 +60,8 @@ const Sidebar = ({visible, setVisible}) => {
               <Icon
                 fill={
                   router.pathname === path
-                    ? 'rgb(225, 228, 232)'
-                    : 'rgb(106, 115, 125)'
+                    ? "rgb(225, 228, 232)"
+                    : "rgb(106, 115, 125)"
                 }
                 className={styles.icon}
               />
@@ -71,8 +76,8 @@ const Sidebar = ({visible, setVisible}) => {
               <Icon
                 fill={
                   router.pathname === path
-                    ? 'rgb(225, 228, 232)'
-                    : 'rgb(106, 115, 125)'
+                    ? "rgb(225, 228, 232)"
+                    : "rgb(106, 115, 125)"
                 }
                 className={styles.icon}
               />

@@ -294,6 +294,12 @@ body {
     width: 100%;
   }
 }
+@media screen and (max-width: 500px) {
+  .app-container{
+    height: 300px;
+    padding: 20rem 0;
+  }
+}
 /* Carousel Container */
 .carousel-container {
   position: relative;
@@ -351,6 +357,11 @@ body {
 @media screen and (max-width: 800px) {
   .neomorphic-card{
     width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .neomorphic-card{
+    height: 300px;
   }
 }
 
@@ -630,6 +641,20 @@ body {
   background-color: var(--card-color);
   cursor: pointer;
   transition: all 0.2s ease;
+}
+@media screen and (max-width: 500px) {
+  .carousel-navigation{
+    margin-top: 62px;
+  }
+
+  .nav-dots{
+    gap: 1rem;
+  }
+
+  .dot-base{
+    width: 0.7rem;
+    height: 0.7rem;
+  }
 }
 
 .dot-inactive {

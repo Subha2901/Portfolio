@@ -2,12 +2,10 @@ import { useState } from 'react';
 import styles from '../styles/AnimatedToggle.module.css';
 import Image from 'next/image';
 
-const AnimatedToggle = ({ onToggle }) => {
-  const [isOpen, setIsOpen] = useState(true);
+const AnimatedToggle = ({ onToggle, isOpen }) => {
 
   const handleClick = () => {
     const newState = !isOpen;
-    setIsOpen(newState);
     onToggle(newState);
   };
 

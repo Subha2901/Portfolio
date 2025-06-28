@@ -40,7 +40,7 @@ const explorerItems = [
   },
 ];
 
-const ToggleExplorer = () => {
+const ToggleExplorer = ({setVisible}) => {
   
   const [portfolioOpen, setPortfolioOpen] = useState(true);
   const router = useRouter();
@@ -68,8 +68,8 @@ const ToggleExplorer = () => {
           style={portfolioOpen ? { display: 'block' } : { display: 'none' }}
         >
           {explorerItems.map((item) => (
-            <Link href={item.path} key={item.name}>
-              <div className={`${styles.file} ${router.pathname === item.path && styles.active}`}>
+            <Link href={item.path} key={item.name} onClick={() => setVisible(false)}>
+              <div className={`${styles.file} ${router.pathname === item.path && styles.active}`} onClick={() => setVisible(false)}>
                 <Image
                   src={`/${item.icon}`}
                   alt={item.name}
